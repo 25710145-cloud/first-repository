@@ -1,4 +1,5 @@
  "use strict";
+
 let message;
 let name;
 
@@ -71,3 +72,11 @@ const x = Number(prompt("Nhập giá trị x:"));
  } else {
     console.log("Greater than");
  }
+function checkAnswer(){
+    let userAnswer = Number(document.getElementById("answer").value);
+    if (userAnswer === 134){
+        document.getElementById("result").innerHTML = "Trả lời đúng!";    
+    } else {
+        document.getElementById("result").innerHTML = "Trả lời sai!";
+    }
+}
