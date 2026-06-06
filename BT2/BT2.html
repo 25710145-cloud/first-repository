@@ -3,15 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BÀI TẬP 2</title>
-    <script src="none.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <title>Bài tập</title>
+    <script src="none.js" defer></script>
 </head>
 <body>
-    <p>Ví dụ</p>
- <h1>56+78= ?</h1>
- <input type ="number" id= "answer" placeholder="Nhập kết quả">
- <button onclick="checkAnswer()">Kiểm tra</button>
- <h2 id="result"></h2>
+    <h2>Nhập dữ liệu</h2>
+    <label>Nhập tên: </label>
+    <input type="text" id="ten"><br><br>
+    
+    <label>Nhập tuổi: </label>
+    <input type="number" id="tuoi"><br><br>
+    
+    <label>Nhập chiều cao (cm): </label>
+    <input type="number" id="chieuCao"><br><br>
+    
+    <label>Trạng thái học tập: </label><br><br>
+    <input type="radio" name="hocLapTrinh" value="True"> True<br><br>
+    <input type="radio" name="hocLapTrinh" value="False"> False<br><br>
+    
+    <label>Nhập số a: </label>
+    <input type="number" id="a"><br><br>
+    
+    <label>Nhập số b: </label>
+    <input type="number" id="b"><br><br>
+    
+    <label>Nhập số c: </label>
+    <input type="number" id="c"><br><br>
+    
+    <label>Nhập chiều dài: </label>
+    <input type="number" id="dai"><br><br>
+    
+    <label>Nhập chiều rộng: </label>
+    <input type="number" id="rong"><br><br>
+    
+    <label>Nhập bán kính: </label>
+    <input type="number" id="r"><br><br>
+
+    <button onclick="xuLy()">Thực hiện</button>
+    
+    <h2>Kết quả 20 bài:</h2>
+    <div id="kq"></div>
 </body>
 </html>

@@ -1,82 +1,94 @@
- "use strict";
+function xuLy() {
+    // Lấy dữ liệu từ giao diện HTML
+    let ten = document.getElementById("ten").value;
+    let tuoi = Number(document.getElementById("tuoi").value);
+    let chieuCao = Number(document.getElementById("chieuCao").value);
 
-let message;
-let name;
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+    let c = Number(document.getElementById("c").value);
 
-name = "Phạm Nguyễn Thanh Tâm";
-message = name;
+    let dai = Number(document.getElementById("dai").value);
+    let rong = Number(document.getElementById("rong").value);
 
-document.write(message);
-let language;
-language = "JavaScript"
-console.log(language);
+    let r = Number(document.getElementById("r").value);
 
-function ask(question, handleYes, handleNo){
-    const answer = confirm(question);
-    if (answer) {
-        handleYes();
-    }   else {
-        handleNo();
-    }
-    }
+    let kq = document.getElementById("kq");
+    
+    // Xử lý các phép tính logic
+    let hoc = document.querySelector('input[name="hocLapTrinh"]:checked');
+    let trangThaiHoc = hoc ? hoc.value : "Chưa chọn";
 
-    ask(
-        "Bạn có phải là Robot không?",
-        function() {
-            console.log("Bạn đã chọn Yes!");
-        },
-        function() {
-            console.log("Bạn đã chọn No!");
-        }
-    );
-    let isVietnamese = confirm("Bạn có phải người Việt Nam không?");
-    let wellcome;
-    if (isVietnamese) {
-        wellcome = function(){ 
-        console.log("Chào bạn!");
-    };
-} else {
-    wellcome = function () {
-        console.log("Hello!");
-    };
-}
-wellcome();
-let myComputer = {
-    type: "laptop",
-    brand: "MSI",
-    os: "Windows 11",
-    graphicCard: "NVDIA",
-};
-console.log(myComputer.type);
-console.log(myComputer.brand);
-console.log(myComputer.os);
-console.log(myComputer.graphicCard);
+    let x = "JavaScript";
+    x = ten;
 
-console.log(myComputer["type"]);
-console.log(myComputer["brand"]);
-console.log(myComputer["os"]);
-console.log(myComputer["graphicCard"]);
+    let thuong = (b === 0) ? "Không thể chia cho số 0" : (a / b);
 
-const value = prompt("Nhập vào số nguyên dương chẵn:", 0);
-if (value % 2 === 0) {
-    alert("Bạn đã nhập đúng!");
-} else {
-    alert("Bạn đã nhập sai!");
-}
+    let soSanh = "";
+    if (a > b) soSanh = "Số lớn hơn là " + a;
+    else if (b > a) soSanh = "Số lớn hơn là " + b;
+    else soSanh = "Hai số bằng nhau";
 
-const x = Number(prompt("Nhập giá trị x:"));
- if (x < 56) {
-    console.log("Less than");
- } else if (x === 56) {
-    console.log("Equal");
- } else {
-    console.log("Greater than");
- }
-function checkAnswer(){
-    let userAnswer = Number(document.getElementById("answer").value);
-    if (userAnswer === 134){
-        document.getElementById("result").innerHTML = "Trả lời đúng!";    
-    } else {
-        document.getElementById("result").innerHTML = "Trả lời sai!";
-    }
+    // Hiển thị trực tiếp Đề bài và Đáp án
+    kq.innerHTML = `
+        <b>Bài 1: Xuất tên vừa nhập</b><br>
+        Đáp án: ${ten}<br><br>
+
+        <b>Bài 2: Xuất tuổi vừa nhập</b><br>
+        Đáp án: ${tuoi}<br><br>
+
+        <b>Bài 3: Xuất chiều cao vừa nhập</b><br>
+        Đáp án: ${chieuCao}<br><br>
+
+        <b>Bài 4: Kiểm tra trạng thái học tập</b><br>
+        Đáp án: ${trangThaiHoc}<br><br>
+
+        <b>Bài 5: Kiểm tra kiểu dữ liệu của biến Tên</b><br>
+        Đáp án: ${typeof ten}<br><br>
+
+        <b>Bài 6: Kiểm tra kiểu dữ liệu của số a</b><br>
+        Đáp án: ${typeof a}<br><br>
+
+        <b>Bài 7: Kiểm tra kiểu dữ liệu của giá trị true</b><br>
+        Đáp án: ${typeof true}<br><br>
+
+        <b>Bài 8: Khởi tạo biến x = "JavaScript" rồi gán lại bằng Tên</b><br>
+        Đáp án: x = ${x}<br><br>
+
+        <b>Bài 9: Tính tổng a + b</b><br>
+        Đáp án: ${a + b}<br><br>
+
+        <b>Bài 10: Tính hiệu a - b</b><br>
+        Đáp án: ${a - b}<br><br>
+
+        <b>Bài 11: Tính tích a * b</b><br>
+        Đáp án: ${a * b}<br><br>
+
+        <b>Bài 12: Tính thương a / b</b><br>
+        Đáp án: ${thuong}<br><br>
+
+        <b>Bài 13: Tính diện tích hình chữ nhật</b><br>
+        Đáp án: ${dai * rong}<br><br>
+
+        <b>Bài 14: Tính chu vi hình chữ nhật</b><br>
+        Đáp án: ${(dai + rong) * 2}<br><br>
+
+        <b>Bài 15: Tính diện tích hình tròn</b><br>
+        Đáp án: ${3.14 * r * r}<br><br>
+
+        <b>Bài 16: Đổi số a từ độ C sang độ F</b><br>
+        Đáp án: ${a * 9 / 5 + 32} °F<br><br>
+
+        <b>Bài 17: Đổi số a từ độ F sang độ C</b><br>
+        Đáp án: ${((a - 32) * 5 / 9).toFixed(2)} °C<br><br>
+
+        <b>Bài 18: Tính trung bình cộng 3 số a, b, c</b><br>
+        Đáp án: ${((a + b + c) / 3).toFixed(2)}<br><br>
+
+        <b>Bài 19: Tìm phần dư của phép chia a cho b</b><br>
+        Đáp án: ${a % b}<br><br>
+
+        <b>Bài 20: So sánh số a và số b</b><br>
+        Đáp án: ${soSanh}<br>
+    `;
 }
